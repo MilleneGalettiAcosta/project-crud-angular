@@ -15,11 +15,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Millene</td>
-          <td>32</td>
-          <td>Desenvolvedor</td>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.profession}}</td>
           <td>
             <button class="btn btn-primary">Editar</button>
           </td>
