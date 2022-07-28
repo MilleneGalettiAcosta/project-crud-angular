@@ -30,6 +30,8 @@ export class UsersListComponent implements OnInit {
       console.log('Usuário excluido');
     }, (err) => {
       console.log('ERROR', err.status);
+    }, () => {
+      this.getAllUsers();
     })
   }
 
