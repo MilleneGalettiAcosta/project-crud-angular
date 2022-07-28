@@ -28,4 +28,8 @@ export class UserService {
     return this.httpClient.get<IUser[]>(this.apiUrl);
   }
 
+  delete(id: number): Observable<IUser> {
+    return this.httpClient.delete<IUser>(`${this.apiUrl}/id/${id}`);
+  }
+
 }
