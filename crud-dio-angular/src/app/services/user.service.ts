@@ -14,6 +14,10 @@ export class UserService {
 
   // C.R.U.D - CREATE, READ, UPDATE, DELETE.
 
+  create(user: IUser): Observable<IUser> {
+    return this.httpClient.post<IUser>(this.apiUrl, user);
+  }
+
   getAll(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>(this.apiUrl);
   }

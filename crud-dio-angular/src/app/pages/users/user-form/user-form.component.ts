@@ -22,4 +22,8 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createUser() {
+    console.log(this.userForm.value)
+  }
+
 }
