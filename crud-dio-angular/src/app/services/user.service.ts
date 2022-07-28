@@ -13,7 +13,6 @@ export class UserService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
-      // 'token': 'value token'
     })
   }
 
