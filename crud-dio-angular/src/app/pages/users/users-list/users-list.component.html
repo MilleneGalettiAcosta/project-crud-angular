@@ -9,22 +9,24 @@
         <tr>
           <th>Id</th>
           <th>Nome</th>
+          <th>Sobrenome</th>
           <th>Idade</th>
           <th>Profissão</th>
           <th colspan="2"></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Millene</td>
-          <td>32</td>
-          <td>Desenvolvedor</td>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.profession}}</td>
           <td>
-            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-primary" [routerLink]="['form', user.id]">Editar</button>
           </td>
           <td>
-            <button class="btn btn-danger">Excluir</button>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Excluir</button>
           </td>
         </tr>
       </tbody>
