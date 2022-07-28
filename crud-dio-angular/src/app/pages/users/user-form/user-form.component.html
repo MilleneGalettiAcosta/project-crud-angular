@@ -1,24 +1,24 @@
 <div class="card w-100 my-5">
   <div class="car-body">
     <h1 class="card-title text-center">Formulário de Usuário</h1>
-    <form>
+    <form [formGroup]="userForm">
       <div class="rmy-4 w-100 d-flex justify-content-between">
         <div class="form-floating w-50 mx-2">
-          <input type="text" class="form-control" id="name" placeholder="Digite o seu nome">
+          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Digite o seu nome">
           <label for="name">Nome</label>
         </div>
         <div class="form-floating  w-50 mx-2">
-          <input type="text" class="form-control" id="lastname" placeholder="Digite o seu sobrenome">
+          <input formControlName="lastName" type="text" class="form-control" id="lastname" placeholder="Digite o seu sobrenome">
           <label for="lastname">Sobrenome</label>
         </div>
       </div>
       <div class="my-4 w-100 d-flex justify-content-between">
         <div class="form-floating  w-50 mx-2">
-          <input type="text" class="form-control" id="age" placeholder="Digite sua idade">
+          <input formControlName="age" type="text" class="form-control" id="age" placeholder="Digite sua idade">
           <label for="age">Idade</label>
         </div>
         <div class="form-floating  w-50 mx-2">
-          <input type="text" class="form-control" id="profession" placeholder="Digite sua profissão">
+          <input formControlName="profession" type="text" class="form-control" id="profession" placeholder="Digite sua profissão">
           <label for="profession">Profissão</label>
         </div>
       </div>
