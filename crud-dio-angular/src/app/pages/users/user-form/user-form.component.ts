@@ -27,7 +27,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.actRoute.paramMap.subscribe(params => {
       this.userId = params.get('id');
-      if (this.userId) {
+      if (this.userId !== null) {
         this.userService.getById(this.userId).subscribe(result => {
           this.userForm.patchValue({
             id: result[0].id,
@@ -45,8 +45,6 @@ export class UserFormComponent implements OnInit {
   getAllUsers(): void {
     this.userService.getAll().subscribe(response => {
       this.users = response;
-    }, () => {
-      this.router.navigate(['/']);
     });
   }
 
@@ -54,6 +52,8 @@ export class UserFormComponent implements OnInit {
     this.userForm.get('id')?.patchValue(this.users.length + 1);
     this.userService.create(this.userForm.value).subscribe(result => {
       console.log(`Usuário ${result.name} ${result.lastName} cadastrado com sucesso`);
+    },  () => {
+      this.router.navigate(['/']);
     })
   }
 
@@ -68,7 +68,7 @@ export class UserFormComponent implements OnInit {
   }
 
   actionButton() {
-    if (this.userId) {
+    if (this.userId !== null) {
       this.updateUser();
     } else {
       this.createUser();
